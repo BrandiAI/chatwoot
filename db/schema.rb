@@ -135,7 +135,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_15_202035) do
   create_table "article_embeddings", force: :cascade do |t|
     t.bigint "article_id", null: false
     t.text "term", null: false
-    t.vector "embedding", limit: 1536
+    t.vector "embedding", limit: 1024
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["embedding"], name: "index_article_embeddings_on_embedding", using: :ivfflat
@@ -254,7 +254,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_15_202035) do
   create_table "captain_assistant_responses", force: :cascade do |t|
     t.string "question", null: false
     t.text "answer", null: false
-    t.vector "embedding", limit: 1536
+    t.vector "embedding", limit: 1024
     t.bigint "assistant_id", null: false
     t.bigint "documentable_id"
     t.bigint "account_id", null: false
