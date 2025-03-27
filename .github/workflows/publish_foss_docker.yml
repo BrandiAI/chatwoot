@@ -18,6 +18,10 @@ on:
 env:
   DOCKER_REPO: ghcr.io/brandiai/chatwoot
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     strategy:
