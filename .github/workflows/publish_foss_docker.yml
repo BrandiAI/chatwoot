@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_REPO: ghcr.io/${{ github.repository }}
+  DOCKER_REPO: ghcr.io/${{ github.repository | lowercase }}
 
 jobs:
   build:
