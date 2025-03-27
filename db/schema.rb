@@ -16,7 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_15_202035) do
   enable_extension "pg_trgm"
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
-  enable_extension "vector"
+  enable_extension "pgvector"
 
   create_table "access_tokens", force: :cascade do |t|
     t.string "owner_type"
