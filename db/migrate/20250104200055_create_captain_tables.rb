@@ -64,7 +64,7 @@ class CreateCaptainTables < ActiveRecord::Migration[7.0]
     create_table :captain_assistant_responses do |t|
       t.string :question, null: false
       t.text :answer, null: false
-      t.vector :embedding, limit: 1536
+      t.vector :embedding, limit: 1024
       t.bigint :assistant_id, null: false
       t.bigint :document_id
       t.bigint :account_id, null: false
@@ -82,7 +82,7 @@ class CreateCaptainTables < ActiveRecord::Migration[7.0]
     create_table :article_embeddings, if_not_exists: true do |t|
       t.bigint :article_id, null: false
       t.text :term, null: false
-      t.vector :embedding, limit: 1536
+      t.vector :embedding, limit: 1024
       t.timestamps
     end
     add_index :article_embeddings, :embedding, if_not_exists: true, using: :ivfflat, opclass: :vector_l2_ops

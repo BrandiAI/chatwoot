@@ -3,7 +3,8 @@ require 'openai'
 class Captain::Llm::EmbeddingService < Llm::BaseOpenAiService
   class EmbeddingsError < StandardError; end
 
-  DEFAULT_MODEL = 'text-embedding-3-small'.freeze
+  # text-embedding-ada-002 provides 1024 dimensions
+  DEFAULT_MODEL = 'text-embedding-ada-002'.freeze
 
   def get_embedding(content, model: DEFAULT_MODEL)
     response = @client.embeddings(
