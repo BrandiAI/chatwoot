@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_REPO: brandi/chatwoot
+  DOCKER_REPO: ghcr.io/brandi/chatwoot
 
 jobs:
   build:
